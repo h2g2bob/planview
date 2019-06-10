@@ -33,8 +33,9 @@
       window.addEventListener("load", function() {
         $('#input-txt').tooltip();
 
-        $('#demo-btn').tooltip().click(function() {
+        $('#demo-btn').tooltip().click(function(event) {
           $('#input-txt').load('/test/data/plan1.txt');
+          event.preventDefault();
         });
 
         $('#timeline-btn').tooltip().click(function() {
@@ -56,10 +57,12 @@
     <p>Display the timeline of a query execution.</p>
     <p>This is a client-side tool: no data is sent to the server.</p>
 
-    <textarea id="input-txt" cols="120" rows="15" title="Enter the result of an EXPLAIN or EXPLAIN ANALYZE statement."></textarea>
-    <br/>
-    <button id="timeline-btn" value="Timeline" title="Generate the plan chart.">Timeline</button>
-    <button id="demo-btn" title="Insert an example plan in the input box.">Demo</button>
+    <div class="input-div">
+      <textarea id="input-txt" cols="120" rows="15" title="Enter the result of an EXPLAIN or EXPLAIN ANALYZE statement."></textarea>
+      <br/>
+      <button id="timeline-btn" value="Timeline" title="Generate the plan chart.">Timeline</button>
+      <a id="demo-btn" href="#" title="Insert an example plan in the input box.">Demo</a>
+    </div>
     <div id="output-area" style="display: none"></div>
 
     <div class="copyright">
