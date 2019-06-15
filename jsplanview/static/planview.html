@@ -41,7 +41,7 @@
         $('#timeline-btn').tooltip().click(function() {
           var remove_header_footer = (function (text) {
             return text.
-              replace(RegExp("^[\\s]*QUERY PLAN[\\s]+[-]*[\\s]*"), "").
+              replace(RegExp("^[\\s\\S]*QUERY PLAN[\\s]+[-]*[\\s]*", "i"), "").
               replace(RegExp("\\(1 row\\)[\\s]*$"), "");
           });
 
