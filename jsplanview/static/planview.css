@@ -29,6 +29,9 @@ h2 {
 h3 {
   margin-top: 0.5em;
   margin-bottom: 0.25em;
+}
+
+#output-area h3 {
   margin-left: 1em;
 }
 
